@@ -1,0 +1,19 @@
+{
+	"name": "weather-machine",
+	"version": "0.1.0",
+	"description": "A bot using the WeatherStack",
+	"main": "index.js",
+	"repository": "https://github.com/brussell98/WeatherMachine.git",
+	"author": "Brussell",
+	"license": "MIT",
+	"dependencies": {
+		"Cloudstorm": "DasWolke/CloudStorm#dev",
+		"amqplib": "^0.5.2",
+		"bluebird": "^3.5.1",
+		"dotenv": "^4.0.0",
+		"erlpack": "^0.1.2",
+		"eventemitter3": "^3.0.0",
+		"raincache": "DasWolke/RainCache#dev",
+		"snowtransfer": "DasWolke/SnowTransfer#dev"
+	}
+}
