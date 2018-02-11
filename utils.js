@@ -1,4 +1,7 @@
 function parseArgs(args = process.argv) {
+	if (args.length < 3)
+		return { };
+
 	return args.slice(2).join(' ').split(/ (?=-)/).reduce((obj, arg) => {
 		let [, key, value] = arg.match(/(?:-{1,2}([a-zA-Z\-_]+))[= ](.+)/);
 		if (/^\d+$/.test(value))

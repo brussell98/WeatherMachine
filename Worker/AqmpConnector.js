@@ -16,14 +16,12 @@ class AmqpConnector extends EventEmitter {
 
 		this.emit('ready');
 
-		this.channel.assertQueue('weather-events', { durable: false });
+		this.channel.assertQueue('weather-events', { durable: false, messageTtl: 60e3 });
 		this.channel.consume('weather-events', async event => {
 			await this.channel.ack(event);
 
 			this.emit('event', JSON.parse(event.content.toString()));
 		});
-
-		// this.channel.assertQueue('weather-gateway-requests', { durable: false, autoDelete: true });
 	}
 
 	async sendToGateway(event) {

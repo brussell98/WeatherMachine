@@ -1,5 +1,5 @@
 require("bluebird");
-require('dotenv').config();
+require('dotenv').config({ path: __dirname + '/../.env' });
 
 const { parseArgs } = require('../utils');
 const CloudStorm = require('Cloudstorm');
